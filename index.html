@@ -3,87 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enfado City</title>
+    <title>Enfado City // Visual Chaos</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Space+Mono&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            cursor: crosshair;
         }
+
         body {
-            background-color: #0b0b0b;
+            background-color: #000000;
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Space Mono', monospace;
             overflow-x: hidden;
         }
-        /* الهيدر */
+
+        /* خطوط شبكية Brutalist للموقع */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* الهيدر الاحترافي */
         header {
-            padding: 30px;
-            text-align: center;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-        }
-        header h1 {
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
-        }
-        /* السيكشن الرئيسي بتاع الفيديو */
-        .hero-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .hero-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #e50914; /* أحمر سينمائي */
-        }
-        .hero-section p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            color: #cccccc;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        /* حاوية الفيديو عشان يشتغل ويظبط مقاسه تلقائي */
-        .video-container {
             width: 100%;
-            max-width: 800px;
-            border: 2px solid #222;
-            box-shadow: 0px 0px 25px rgba(0,0,0,0.8);
-            background-color: #000;
-            aspect-ratio: 16/9;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
         }
+
+        .brand-logo {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .brand-logo span {
+            color: #ff003c;
+        }
+
+        .nav-status {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        /* الجزء الرئيسي */
+        .hero {
+            padding: 100px 5% 60px 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .meta-tag {
+            font-size: 0.8rem;
+            color: #ff003c;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+            border: 1px solid #ff003c;
+            padding: 4px 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            line-height: 0.85;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+
+        /* حاوية الشو ريل الرئيسي الكبيرة */
+        .main-reel {
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #0a0a0a;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .video-box {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
         video {
             width: 100%;
             height: 100%;
+            object-fit: cover;
             display: block;
+        }
+
+        /* شبكة المشاريع التانية الفيديوهات عشان ما تبقاش صور ثابتة */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0a0a0a;
+            transition: border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #ff003c;
+        }
+
+        .project-info {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .project-category {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* شريط متحرك سفلي للماركتنج */
+        .ticker {
+            width: 100%;
+            background: #ff003c;
+            overflow: hidden;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0; left: 0;
+            z-index: 100;
+        }
+
+        .ticker-wrap {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker-anim 20s linear infinite;
+        }
+
+        @keyframes ticker-anim {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 40px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Enfado City</h1>
+        <div class="brand-logo">ENFADO<span>.</span></div>
+        <div class="nav-status">[ aib // creative direction ]</div>
     </header>
 
-    <section class="hero-section">
-        <h2>Visual Chaos . Cinematic Precision</h2>
-        <p>We are a full-service media production house turning raw energy and street culture into high-end cinematic art.</p>
-        
-        <!-- هنا الفيديو بتاعك -->
-        <div class="video-container">
-            <video controls autoplay muted loop>
-                <source src="showreel.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <main class="hero">
+        <span class="meta-tag">DIRECTOR SHOWREEL // 2026</span>
+        <h1>VISUAL<br><span style="color: #ff003c;">CHAOS.</span></h1>
+
+        <!-- الفيديو الرئيسي الفاجر -->
+        <div class="main-reel">
+            <div class="video-box">
+                <video autoplay muted loop playsinline controls>
+                    <source src="showreel.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-    </section>
+
+        <h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: 2rem; text-transform: uppercase; margin-bottom: 20px;">Selected Projects //</h2>
+
+        <!-- شبكة الفيديوهات التانية عشان تشتغل علطول -->
+        <div class="projects-grid">
+            
+            <!-- فيديو رقم 1 -->
+            <div class="project-card">
+                <div class="video-box">
+                    <video autoplay muted loop playsinline controls>
+                        <source src="project1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <div class="project-title">Underground Culture Doc</div>
+                    <div class="project-category">[ VFX / DIRECTION ]</div>
+                </div>
+            </div>
+
+            <!-- فيديو رقم 2 -->
+            <div class="project-card">
+                <div class="video-box">
+                    <video autoplay muted loop playsinline controls>
+                        <source src="project2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <div class="project-title">Music Video Reel</div>
+                    <div class="project-category">[ EDITING ]</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="ticker">
+        <div class="ticker-wrap">
+            <span class="ticker-item">ENFADO CITY MEDIA PRODUCTION</span>
+            <span class="ticker-item">// CINEMATIC PRECISION</span>
+            <span class="ticker-item">// BLENDER 3D & VFX</span>
+            <span class="ticker-item">// STREET CULTURE</span>
+            <span class="ticker-item">ENFADO CITY MEDIA PRODUCTION</span>
+            <span class="ticker-item">// CINEMATIC PRECISION</span>
+            <span class="ticker-item">// BLENDER 3D & VFX</span>
+            <span class="ticker-item">// STREET CULTURE</span>
+        </div>
+    </div>
 
 </body>
 </html>
