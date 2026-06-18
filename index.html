@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enfado City // Visual Chaos</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght=800;900&family=Space+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -45,9 +45,9 @@
         }
 
         .brand-logo {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: -1px;
         }
@@ -56,25 +56,25 @@
             color: #ff003c;
         }
 
-        /* زرار الواتساب */
         .wp-btn {
             background-color: #ff003c;
             color: #000;
             text-decoration: none;
-            padding: 12px 24px;
-            font-weight: bold;
+            padding: 14px 28px;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
             font-size: 0.85rem;
             text-transform: uppercase;
             border: 1px solid #ff003c;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.3);
         }
 
         .wp-btn:hover {
             background-color: #000;
             color: #ff003c;
-            box-shadow: 0 0 25px rgba(255, 0, 60, 0.8);
-            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.7);
+            transform: translateY(-3px);
         }
 
         .hero {
@@ -89,12 +89,13 @@
             text-transform: uppercase;
             margin-bottom: 15px;
             display: inline-block;
+            letter-spacing: 2px;
         }
 
         .hero h1 {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: clamp(3rem, 8vw, 6.5rem);
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 7.5rem);
+            font-weight: 800;
             line-height: 0.85;
             text-transform: uppercase;
             letter-spacing: -3px;
@@ -105,7 +106,7 @@
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.15);
             background: #0a0a0a;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .video-box {
@@ -121,11 +122,20 @@
             border: 0;
         }
 
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 40px;
-            margin-bottom: 100px;
+            margin-bottom: 120px;
         }
 
         .project-card {
@@ -137,7 +147,7 @@
 
         .behance-box {
             width: 100%;
-            height: 350px;
+            height: 380px;
             overflow: hidden;
             position: relative;
         }
@@ -149,7 +159,7 @@
         }
 
         .project-info {
-            padding: 20px;
+            padding: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -158,9 +168,10 @@
         }
 
         .project-title {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .view-link {
@@ -169,80 +180,100 @@
             text-decoration: none;
             text-transform: uppercase;
             border-bottom: 1px solid #ff003c;
+            font-weight: 700;
         }
 
-        /* ستيل سيكشن حجز الخدمة */
+        /* سيكشن الحجز المطور بخاصية الـ Grid لتوزيع المساحات */
         .booking-section {
-            margin-top: 60px;
-            margin-bottom: 80px;
-            max-width: 700px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 100%;
         }
 
-        .booking-section h2 {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: 2.5rem;
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .booking-side-text {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 4rem);
+            font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            color: rgba(255, 255, 255, 0.15);
+            border-left: 3px solid #ff003c;
+            padding-left: 20px;
+        }
+
+        .booking-side-text span {
+            color: #ff003c;
         }
 
         .booking-form {
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 40px;
-            background: #0a0a0a;
+            padding: 45px;
+            background: #060606;
+            position: relative;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
         }
 
         .form-group label {
+            font-family: 'Space Mono', monospace;
             font-size: 0.8rem;
             color: #ff003c;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            margin-bottom: 12px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
         }
 
         .form-group input, .form-group textarea {
             background: #000;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 18px;
             color: #fff;
             font-family: 'Space Mono', monospace;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: #ff003c;
-            box-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
+            background: #0a0a0a;
         }
 
         .submit-btn {
             background-color: #ff003c;
             color: #000;
             border: 1px solid #ff003c;
-            padding: 15px 30px;
+            padding: 18px 30px;
             font-family: 'Space Mono', monospace;
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.3);
+            letter-spacing: 1px;
         }
 
         .submit-btn:hover {
             background-color: #000;
             color: #ff003c;
-            box-shadow: 0 0 25px rgba(255, 0, 60, 0.8);
+            box-shadow: 0 0 35px rgba(255, 0, 60, 0.7);
         }
 
-        /* شريط متحرك سفلي */
         .ticker {
             width: 100%;
             background: #ff003c;
@@ -273,10 +304,15 @@
             text-transform: uppercase;
         }
 
+        @media (max-width: 992px) {
+            .booking-container { grid-template-columns: 1fr; gap: 40px; }
+            .booking-side-text { border-left: none; border-bottom: 3px solid #ff003c; padding-left: 0; padding-bottom: 15px; }
+        }
+
         @media (max-width: 768px) {
             .projects-grid { grid-template-columns: 1fr; }
             header { flex-direction: column; gap: 20px; text-align: center; }
-            .booking-form { padding: 20px; }
+            .booking-form { padding: 25px; }
         }
     </style>
 </head>
@@ -297,7 +333,7 @@
             </div>
         </div>
 
-        <h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: 2rem; text-transform: uppercase; margin-bottom: 30px;">Selected Projects //</h2>
+        <h2 class="section-title">Selected Projects //</h2>
 
         <div class="projects-grid">
             <div class="project-card">
@@ -342,33 +378,40 @@
         </div>
 
         <section class="booking-section">
-            <h2>Book a service // حجز خدمة</h2>
-            <form action="https://formsubmit.co/loaywrld420@gmail.com" method="POST" class="booking-form">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="box">
+            <div class="booking-container">
                 
-                <div class="form-group">
-                    <label>Client Name // الاسم</label>
-                    <input type="text" name="name" required placeholder="EX: TRIPPY LOAY">
+                <div class="booking-side-text">
+                    BOOK A<br>SERVICE // <br><span>SYSTEM<br>ACTIVE.</span>
                 </div>
 
-                <div class="form-group">
-                    <label>Client Email // الإيميل</label>
-                    <input type="email" name="email" required placeholder="EX: CLIENT@DOMIN.COM">
-                </div>
+                <form action="https://formsubmit.co/loaywrld420@gmail.com" method="POST" class="booking-form">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="box">
+                    
+                    <div class="form-group">
+                        <label>Client Name //</label>
+                        <input type="text" name="name" required placeholder="EX: TRIPPY LOAY">
+                    </div>
 
-                <div class="form-group">
-                    <label>Phone Number // الرقم</label>
-                    <input type="text" name="phone" required placeholder="EX: +201555296241">
-                </div>
+                    <div class="form-group">
+                        <label>Client Email //</label>
+                        <input type="email" name="email" required placeholder="EX: CLIENT@DOMAIN.COM">
+                    </div>
 
-                <div class="form-group">
-                    <label>Order Brief // طلبه بالتفصيل</label>
-                    <textarea name="brief" rows="5" required placeholder="EX: NEED 3D VFX MIXED WITH GRUNGE EDITING STYLE FOR A MUSIC VIDEO..."></textarea>
-                </div>
+                    <div class="form-group">
+                        <label>Phone Number //</label>
+                        <input type="text" name="phone" required placeholder="EX: +201555296241">
+                    </div>
 
-                <button type="submit" class="submit-btn">Send Brief // ابعت الطلب</button>
-            </form>
+                    <div class="form-group">
+                        <label>Order Brief //</label>
+                        <textarea name="brief" rows="5" required placeholder="EX: NEED A HIGHER LEVEL OF 3D VFX WORK MIXED WITH CYBER GRAPHICS..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Brief //</button>
+                </form>
+
+            </div>
         </section>
 
     </main>
