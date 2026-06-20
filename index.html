@@ -101,10 +101,15 @@
             margin-bottom: 60px;
         }
 
-        /* سيكشن الفيديو الرئيسي بتاعك من فيمو */
-        .main-reel-container {
-            width: 100%;
+        /* شبكة الفيديوهات الرئيسية (فيميو ويوتيوب جمب بعض) */
+        .video-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
             margin-bottom: 80px;
+        }
+
+        .video-card {
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: #050505;
             padding: 10px;
@@ -135,6 +140,45 @@
             letter-spacing: -1px;
         }
 
+        /* شبكة أعمال بهانس الحالية */
+        .behance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .behance-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .behance-box {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .behance-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .project-info {
+            padding: 20px;
+            background: #050505;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* ستايل خانات الـ Coming Soon للفرق القادمة */
         .coming-soon-box {
             width: 100%;
             border: 1px dashed rgba(255, 255, 255, 0.2);
@@ -290,6 +334,7 @@
         }
 
         @media (max-width: 992px) {
+            .video-showcase-grid, .behance-grid { grid-template-columns: 1fr; }
             .booking-container { grid-template-columns: 1fr; gap: 40px; }
             .booking-side-text { border-left: none; border-bottom: 3px solid #ff003c; padding-left: 0; padding-bottom: 15px; }
         }
@@ -311,29 +356,73 @@
         <span class="meta-tag">[ On-Demand Production Supermarket ]</span>
         <h1>PRODUCTION CREW<br>ON YOUR <span style="color: #ff003c;">SHOOT DAY.</span></h1>
 
-        <!-- ==================== MAIN REEL SHOWCASE ==================== -->
-        <div class="main-reel-container">
-            <div class="video-wrapper">
-                <!-- تم ربط فيديو فيمو الحقيقي بتاعك هنا يا ريس -->
-                <iframe src="https://player.vimeo.com/video/1202099833?color=ff003c&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <!-- ==================== MAIN VIDEO SHOWCASE (VIMEO + YOUTUBE SIDE BY SIDE) ==================== -->
+        <div class="video-showcase-grid">
+            <!-- فيديو فيمو الحقيقي بتاعك -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://player.vimeo.com/video/1202099833?color=ff003c&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- فيديو يوتيوب اللي إنت بعته -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/fKRfIIaFnps?si=pzn2IEoNu9siPuNf" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
 
-        <!-- ==================== IMAGE DEPT SECTION ==================== -->
+        <!-- ==================== FEATURED ARCHIVE (BEHANCE SHOGHL) ==================== -->
+        <h2 class="category-title">// FEATURED WORKS ARCHIVE</h2>
+        <div class="behance-grid">
+            
+            <!-- 3D Visual Archive 01 -->
+            <div class="behance-card">
+                <div class="behance-box">
+                    <iframe src="https://www.behance.net/embed/project/246210521?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
+                </div>
+                <div class="project-info">3D Visual Archive 01</div>
+            </div>
+
+            <!-- Selected Works Editing & Direction -->
+            <div class="behance-card">
+                <div class="behance-box">
+                    <iframe src="https://www.behance.net/embed/project/246207947?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
+                </div>
+                <div class="project-info">Selected Works // Editing & Direction</div>
+            </div>
+
+            <!-- Tone & Form -->
+            <div class="behance-card">
+                <div class="behance-box">
+                    <iframe src="https://www.behance.net/embed/project/246207599?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
+                </div>
+                <div class="project-info">Tone & Form // Visuals</div>
+            </div>
+
+            <!-- Photography & Retouch -->
+            <div class="behance-card">
+                <div class="behance-box">
+                    <iframe src="https://www.behance.net/embed/project/230243307?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
+                </div>
+                <div class="project-info">Photography & Retouch</div>
+            </div>
+
+        </div>
+
+        <!-- ==================== ON-DEMAND CREW SECTIONS (COMING SOON) ==================== -->
         <h2 class="category-title">// IMAGE DEPT CREW</h2>
         <div class="coming-soon-box">
             <div class="cs-title">SLOTS LOCKING UP // COMING SOON</div>
             <div class="cs-sub">We are currently filtering and gathering the sharpest photographers & designers.</div>
         </div>
 
-        <!-- ==================== VIDEO DEPT SECTION ==================== -->
         <h2 class="category-title">// VIDEO DEPT CREW</h2>
         <div class="coming-soon-box">
             <div class="cs-title">SLOTS LOCKING UP // COMING SOON</div>
             <div class="cs-sub">Editors, VFX artists, and camera crew onboarding is currently active.</div>
         </div>
 
-        <!-- ==================== AUDIO DEPT SECTION ==================== -->
         <h2 class="category-title">// AUDIO DEPT CREW</h2>
         <div class="coming-soon-box">
             <div class="cs-title">SLOTS LOCKING UP // COMING SOON</div>
