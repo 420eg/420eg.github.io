@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aib // Production Supermarket</title>
+    <title>ENFADO // Production Supermarket</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap');
 
@@ -102,79 +102,69 @@
             margin-bottom: 60px;
         }
 
+        /* سيكشن الفيديو الرئيسي الفوقاني */
+        .main-reel-container {
+            width: 100%;
+            margin-bottom: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #050505;
+            padding: 10px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         .category-title {
             font-family: 'Syne', sans-serif;
             font-size: 2rem;
             font-weight: 800;
             text-transform: uppercase;
-            margin: 60px 0 30px 0;
+            margin: 80px 0 30px 0;
             color: #fff;
             border-left: 4px solid #ff003c;
             padding-left: 15px;
             letter-spacing: -1px;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .project-card {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #0a0a0a;
+        /* ستايل خانات الـ Coming Soon */
+        .coming-soon-box {
+            width: 100%;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            background: #050505;
+            padding: 60px 30px;
+            text-align: center;
             display: flex;
             flex-direction: column;
-        }
-
-        .behance-box {
-            width: 100%;
-            height: 380px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .behance-box iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .project-info {
-            padding: 25px;
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: #050505;
+            letter-spacing: 1px;
         }
 
-        .project-title {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .book-talent-btn {
-            background: transparent;
+        .cs-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
             color: #ff003c;
-            border: 1px solid #ff003c;
-            padding: 10px 20px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            font-weight: 700;
             text-transform: uppercase;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
 
-        .book-talent-btn:hover {
-            background: #ff003c;
-            color: #000;
-            box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+        .cs-sub {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
         }
 
         /* سيكشن الحجز المتطور */
@@ -249,7 +239,6 @@
             background: #0a0a0a;
         }
 
-        /* استايل خاص بخانة التاريخ ليتماشى مع الثيم */
         input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(1);
             cursor: pointer;
@@ -312,7 +301,6 @@
         }
 
         @media (max-width: 768px) {
-            .projects-grid { grid-template-columns: 1fr; }
             header { flex-direction: column; gap: 20px; text-align: center; }
             .booking-form { padding: 25px; }
         }
@@ -321,7 +309,7 @@
 <body>
 
     <header>
-        <div class="brand-logo">aib<span>.</span></div>
+        <div class="brand-logo">ENFADO<span>.</span></div>
         <a href="https://wa.me/201555296241" target="_blank" class="wp-btn">Emergency Call // WP</a>
     </header>
 
@@ -329,60 +317,33 @@
         <span class="meta-tag">[ On-Demand Production Supermarket ]</span>
         <h1>PRODUCTION CREW<br>ON YOUR <span style="color: #ff003c;">SHOOT DAY.</span></h1>
 
+        <!-- ==================== MAIN REEL SHOWCASE ==================== -->
+        <div class="main-reel-container">
+            <div class="video-wrapper">
+                <!-- حط لينك الـ Vimeo الرئيسي بتاع الوكالة هنا مكان الرقم ده -->
+                <iframe src="https://player.vimeo.com/video/524311091?color=ff003c&title=0&byline=0&portrait=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <!-- ==================== IMAGE DEPT SECTION ==================== -->
         <h2 class="category-title">// IMAGE DEPT CREW</h2>
-        <div class="projects-grid">
-            
-            <!-- كارت جرافيك ديزاينر 01 -->
-            <div class="project-card">
-                <div class="behance-box">
-                    <iframe src="https://www.behance.net/embed/project/246210521?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
-                </div>
-                <div class="project-info">
-                    <div class="project-title">Graphic Designer // Slot #01</div>
-                    <a href="#booking" class="book-talent-btn">Book Slot</a>
-                </div>
-            </div>
-
-            <!-- كارت فوتوجرافر 01 -->
-            <div class="project-card">
-                <div class="behance-box">
-                    <iframe src="https://www.behance.net/embed/project/230243307?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
-                </div>
-                <div class="project-info">
-                    <div class="project-title">Photographer // Slot #02</div>
-                    <a href="#booking" class="book-talent-btn">Book Slot</a>
-                </div>
-            </div>
-
+        <div class="coming-soon-box">
+            <div class="cs-title">SLOTS LOCKING UP // COMING SOON</div>
+            <div class="cs-sub">We are currently filtering and gathering the sharpest photographers & designers.</div>
         </div>
 
         <!-- ==================== VIDEO DEPT SECTION ==================== -->
         <h2 class="category-title">// VIDEO DEPT CREW</h2>
-        <div class="projects-grid">
-            
-            <!-- كارت فيديو ايديتور 01 -->
-            <div class="project-card">
-                <div class="behance-box">
-                    <iframe src="https://www.behance.net/embed/project/246207947?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
-                </div>
-                <div class="project-info">
-                    <div class="project-title">Video Editor // Slot #03</div>
-                    <a href="#booking" class="book-talent-btn">Book Slot</a>
-                </div>
-            </div>
+        <div class="coming-soon-box">
+            <div class="cs-title">SLOTS LOCKING UP // COMING SOON</div>
+            <div class="cs-sub">Editors, VFX artists, and camera crew onboarding is currently active.</div>
+        </div>
 
-            <!-- كارت في اف اكس 01 -->
-            <div class="project-card">
-                <div class="behance-box">
-                    <iframe src="https://www.behance.net/embed/project/246207599?sharedOn=behance&navigator=0" allowfullscreen lazyload frameborder="0"></iframe>
-                </div>
-                <div class="project-info">
-                    <div class="project-title">VFX / CGI Artist // Slot #04</div>
-                    <a href="#booking" class="book-talent-btn">Book Slot</a>
-                </div>
-            </div>
-
+        <!-- ==================== AUDIO DEPT SECTION ==================== -->
+        <h2 class="category-title">// AUDIO DEPT CREW</h2>
+        <div class="coming-soon-box">
+            <div class="cs-title">SLOTS LOCKING UP // COMING SOON</div>
+            <div class="cs-sub">Sound designers & music producers section is cooking.</div>
         </div>
 
         <!-- ==================== BOOKING SECTION ==================== -->
@@ -407,7 +368,6 @@
                         <input type="email" name="email" required placeholder="EX: PRODUCER@DOMAIN.COM">
                     </div>
 
-                    <!-- بوزيشن المبدع المطلوب -->
                     <div class="form-group">
                         <label>Select Required Position //</label>
                         <select name="required_position" required>
@@ -420,13 +380,11 @@
                         </select>
                     </div>
 
-                    <!-- تاريخ يوم التصوير أو الديدلاين -->
                     <div class="form-group">
                         <label>Target Date (Shoot / Deadline) //</label>
                         <input type="date" name="target_date" required>
                     </div>
 
-                    <!-- لينك المود بورد أو البريف من بنترست / بهانس -->
                     <div class="form-group">
                         <label>Moodboard / Brief Link //</label>
                         <input type="url" name="moodboard_link" placeholder="EX: https://pinterest.com/your-board">
@@ -447,10 +405,10 @@
 
     <div class="ticker">
         <div class="ticker-wrap">
-            <span class="ticker-item">aib PRODUCTION SUPERMARKET</span>
+            <span class="ticker-item">ENFADO PRODUCTION SUPERMARKET</span>
             <span class="ticker-item">// EMERGENCY CREW LOCK</span>
             <span class="ticker-item">// BROKERING NEXT-LEVEL TALENT</span>
-            <span class="ticker-item">aib PRODUCTION SUPERMARKET</span>
+            <span class="ticker-item">ENFADO PRODUCTION SUPERMARKET</span>
         </div>
     </div>
 
