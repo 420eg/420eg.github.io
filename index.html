@@ -75,7 +75,7 @@
 
         /* Hero / Reel Section */
         .hero {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .hero-title {
@@ -93,9 +93,26 @@
 
         .hero-bio {
             color: #999;
-            max-width: 650px;
+            max-width: 700px;
             font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .skills-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
             margin-bottom: 30px;
+        }
+
+        .badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Video Reel Container */
@@ -124,7 +141,7 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -139,7 +156,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
             margin-bottom: 60px;
         }
@@ -149,7 +166,9 @@
             border: 1px solid var(--border);
             padding: 25px;
             transition: all 0.2s ease-in-out;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -166,10 +185,20 @@
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 10px;
             text-transform: uppercase;
             font-weight: bold;
+        }
+
+        .card-role {
+            font-size: 0.8rem;
+            color: #fff;
+            background: #1a1a1a;
+            display: inline-block;
+            padding: 3px 8px;
+            margin-bottom: 12px;
+            border-left: 2px solid var(--accent);
         }
 
         .card-desc {
@@ -178,9 +207,15 @@
             margin-bottom: 20px;
         }
 
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 16px;
             background: var(--text);
             color: var(--bg);
             text-decoration: none;
@@ -190,12 +225,25 @@
             letter-spacing: 1px;
             border: none;
             cursor: pointer;
+            text-align: center;
             transition: all 0.2s;
         }
 
         .btn:hover {
             background: var(--accent);
             color: #fff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: transparent;
         }
 
         /* Contact Section */
@@ -263,7 +311,7 @@
     <header>
         <div class="brand">
             <h1>LOAY MAHMOUD<span>.</span></h1>
-            <p class="tag">Filmmaker & Visual Effects Artist</p>
+            <p class="tag">Directorial & Post-Production Portfolio</p>
         </div>
         <div class="tag">
             [ CAIRO, EG // 2026 ]
@@ -273,45 +321,84 @@
     <section class="hero">
         <h2 class="hero-title">VISUAL CHAOS.<br><mark>CINEMATIC</mark> PRECISION.</h2>
         <p class="hero-bio">
-            Specialized in video production, high-energy editing, color grading, 3D motion, and VFX compositing. Influenced by Y2K, Opium, and Cyberpunk aesthetics.
+            Filmmaker, Video Editor, and Visual Effects Artist specializing in direction, assistant directing, art direction, 3D motion design, and high-energy video editing.
         </p>
+
+        <div class="skills-badges">
+            <span class="badge">Director</span>
+            <span class="badge">Assistant Director</span>
+            <span class="badge">1st Art Director</span>
+            <span class="badge">Video Editing</span>
+            <span class="badge">3D & VFX</span>
+            <span class="badge">Photography</span>
+        </div>
     </section>
 
-    <!-- MAIN SHOWREEL EMBED -->
-    <div class="section-header">// DIRECTORS REEL</div>
+    <!-- MAIN SHOWREEL EMBED (VIMEO) -->
+    <div class="section-header">// MAIN SHOWREEL</div>
     <div class="reel-wrapper">
-        <iframe src="https://player.vimeo.com/video/76979871" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/1202099833?h=3e7104a37c" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <!-- PORTFOLIO CATEGORIES -->
-    <div class="section-header">// ARCHIVE & WORK</div>
+    <!-- SELECTED WORKS ARCHIVE -->
+    <div class="section-header">// FILM & MUSIC VIDEO ARCHIVES</div>
     <div class="grid">
         
+        <!-- PROJECT 1: FAT EL MAAD -->
         <div class="card">
-            <div class="card-category">01 / COMMERCIAL & EDITING</div>
-            <div class="card-title">Video Editing & Ramping</div>
-            <p class="card-desc">Commercial cuts, dynamic pacing, speed ramping, and full post-production video editing.</p>
-            <a href="https://vimeo.com/user257320336" target="_blank" class="btn">Explore Vimeo</a>
+            <div>
+                <div class="card-category">01 / FILM PROJECT</div>
+                <div class="card-title">فات المعاد (Fat El Maad)</div>
+                <div class="card-role">ROLE: ASSISTANT DIRECTOR</div>
+                <p class="card-desc">Short film directorial team & assistant direction execution.</p>
+            </div>
+            <a href="https://youtu.be/nthwse81QMs" target="_blank" class="btn">Watch Film [YouTube]</a>
         </div>
 
+        <!-- PROJECT 2: AMEER MASHHOUR x POPARABIA -->
         <div class="card">
-            <div class="card-category">02 / 3D & VFX</div>
-            <div class="card-title">Blender & VFX Archives</div>
-            <p class="card-desc">3D environments, motion graphics, stylized visual effects, and compositing projects.</p>
-            <a href="https://vimeo.com/user257320336" target="_blank" class="btn">View Works</a>
+            <div>
+                <div class="card-category">02 / MUSIC VIDEO SERIES</div>
+                <div class="card-title">Ameer Mashhour x PopArabia</div>
+                <div class="card-role">ROLE: VIDEO EDITING & DIRECTION</div>
+                <p class="card-desc">Saudi music video collaboration series under PopArabia.</p>
+            </div>
+            <div class="link-group">
+                <a href="https://www.youtube.com/watch?v=fs7eof86VUU" target="_blank" class="btn">1. Jeddah City</a>
+                <a href="https://youtu.be/GyuiavuJaTM" target="_blank" class="btn btn-outline">2. Ya Wad Gom</a>
+                <a href="https://youtu.be/nthwse81QMs" target="_blank" class="btn btn-outline">3. Ya Welcome</a>
+            </div>
         </div>
 
+        <!-- PROJECT 3: ODII PROJECTS -->
         <div class="card">
-            <div class="card-category">03 / DIRECT REACH</div>
-            <div class="card-title">Direct Contact</div>
-            <p class="card-desc">Reach out directly via WhatsApp for project briefs, bookings, and collaborations.</p>
-            <a href="https://wa.me/201555296241" target="_blank" class="btn">Chat on WhatsApp</a>
+            <div>
+                <div class="card-category">03 / MUSIC VIDEOS (SAUDI)</div>
+                <div class="card-title">ODii Music Videos</div>
+                <div class="card-role">ROLE: PHOTOGRAPHY & 1ST ART DIRECTOR</div>
+                <p class="card-desc">Visual concept execution, set art direction, and cinematography.</p>
+            </div>
+            <div class="link-group">
+                <a href="https://youtu.be/kNC-IFA1gqE" target="_blank" class="btn">ODii - Apachii</a>
+                <a href="https://youtu.be/zG76tYbTLLc" target="_blank" class="btn btn-outline">ODii - Ethnaiin</a>
+            </div>
+        </div>
+
+        <!-- PROJECT 4: 3D & VFX ARCHIVES -->
+        <div class="card">
+            <div>
+                <div class="card-category">04 / DIGITAL ARCHIVE</div>
+                <div class="card-title">3D, VFX & Edit Archives</div>
+                <div class="card-role">ROLE: 3D ARTIST & EDITOR</div>
+                <p class="card-desc">Personal collection of 3D animations, Blender renders, and motion edits.</p>
+            </div>
+            <a href="https://vimeo.com/user257320336" target="_blank" class="btn">Explore Vimeo Channel</a>
         </div>
 
     </div>
 
     <!-- CONTACT SECTION -->
-    <div class="section-header">// DIRECT CONTACT</div>
+    <div class="section-header">// DIRECT CONTACT & INQUIRIES</div>
     <div class="contact-container">
         
         <!-- FormSubmit Contact Form -->
@@ -333,7 +420,7 @@
             </a>
             <a href="https://vimeo.com/user257320336" target="_blank" class="social-link">
                 <span>VIMEO CHANNEL</span>
-                <span>[→]</span>
+                <span>[VIMEO]</span>
             </a>
         </div>
 
