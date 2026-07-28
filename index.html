@@ -11,7 +11,7 @@
             --border: #1f1f1f;
             --text: #ececec;
             --muted: #666666;
-            --accent: #ff0033; /* Opium Red */
+            --accent: #ff0033; /* Opium Red Accent */
             --accent-glow: rgba(255, 0, 51, 0.2);
         }
 
@@ -27,11 +27,11 @@
             color: var(--text);
             line-height: 1.4;
             padding: 20px;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Scanline Texture Effect */
+        /* Scanline Overlay Effect */
         body::before {
             content: " ";
             display: block;
@@ -41,7 +41,7 @@
             background-size: 100% 4px;
             z-index: 1000;
             pointer-events: none;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         header {
@@ -73,7 +73,7 @@
             letter-spacing: 1px;
         }
 
-        /* Hero / Reel Section */
+        /* Hero / Bio Section */
         .hero {
             margin-bottom: 40px;
         }
@@ -93,7 +93,7 @@
 
         .hero-bio {
             color: #999;
-            max-width: 700px;
+            max-width: 750px;
             font-size: 0.95rem;
             margin-bottom: 20px;
         }
@@ -115,27 +115,7 @@
             letter-spacing: 1px;
         }
 
-        /* Video Reel Container */
-        .reel-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            margin-bottom: 50px;
-        }
-
-        .reel-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Grid Section */
+        /* Section Headers */
         .section-header {
             font-size: 0.9rem;
             color: var(--accent);
@@ -154,17 +134,37 @@
             background: var(--border);
         }
 
+        /* Video Container Aspect Ratio 16:9 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Grid Layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
             margin-bottom: 60px;
         }
 
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 25px;
+            overflow: hidden;
             transition: all 0.2s ease-in-out;
             display: flex;
             flex-direction: column;
@@ -174,47 +174,55 @@
         .card:hover {
             border-color: var(--accent);
             box-shadow: 0 0 15px var(--accent-glow);
-            transform: translateY(-2px);
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
         .card-category {
             font-size: 0.7rem;
             color: var(--accent);
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             text-transform: uppercase;
             font-weight: bold;
         }
 
-        .card-role {
-            font-size: 0.8rem;
-            color: #fff;
-            background: #1a1a1a;
-            display: inline-block;
-            padding: 3px 8px;
-            margin-bottom: 12px;
-            border-left: 2px solid var(--accent);
-        }
-
-        .card-desc {
-            color: #888;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-        }
-
-        .link-group {
+        .card-roles {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .role-tag {
+            font-size: 0.7rem;
+            color: #fff;
+            background: #181818;
+            padding: 3px 8px;
+            border-left: 2px solid var(--accent);
+            text-transform: uppercase;
+        }
+
+        .card-credits {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 15px;
+            line-height: 1.4;
         }
 
         .btn {
-            display: inline-block;
+            display: block;
             padding: 10px 16px;
             background: var(--text);
             color: var(--bg);
@@ -227,23 +235,12 @@
             cursor: pointer;
             text-align: center;
             transition: all 0.2s;
+            margin-top: 10px;
         }
 
         .btn:hover {
             background: var(--accent);
             color: #fff;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: transparent;
         }
 
         /* Contact Section */
@@ -311,88 +308,162 @@
     <header>
         <div class="brand">
             <h1>LOAY MAHMOUD<span>.</span></h1>
-            <p class="tag">Directorial & Post-Production Portfolio</p>
+            <p class="tag">Filmmaker // Post-Production & Visual Effects</p>
         </div>
         <div class="tag">
-            [ CAIRO, EG // 2026 ]
+            [ CAIRO, EG // PORTFOLIO ]
         </div>
     </header>
 
     <section class="hero">
         <h2 class="hero-title">VISUAL CHAOS.<br><mark>CINEMATIC</mark> PRECISION.</h2>
         <p class="hero-bio">
-            Filmmaker, Video Editor, and Visual Effects Artist specializing in direction, assistant directing, art direction, 3D motion design, and high-energy video editing.
+            Filmmaker, Director, Video Editor, and VFX Artist. Specializing in high-energy music videos, narrative films, and 3D motion aesthetics.
         </p>
 
         <div class="skills-badges">
             <span class="badge">Director</span>
             <span class="badge">Assistant Director</span>
             <span class="badge">1st Art Director</span>
-            <span class="badge">Video Editing</span>
             <span class="badge">3D & VFX</span>
-            <span class="badge">Photography</span>
+            <span class="badge">Video Editing</span>
         </div>
     </section>
 
-    <!-- MAIN SHOWREEL EMBED (VIMEO) -->
-    <div class="section-header">// MAIN SHOWREEL</div>
-    <div class="reel-wrapper">
-        <iframe src="https://player.vimeo.com/video/1202099833?h=3e7104a37c" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <!-- SELECTED WORKS ARCHIVE -->
-    <div class="section-header">// FILM & MUSIC VIDEO ARCHIVES</div>
+    <!-- WORKS GRID WITH DIRECT EMBEDDED THUMBNAILS & PLAYERS -->
+    <div class="section-header">// SELECTED WORKS</div>
     <div class="grid">
-        
-        <!-- PROJECT 1: FAT EL MAAD -->
-        <div class="card">
-            <div>
-                <div class="card-category">01 / FILM PROJECT</div>
-                <div class="card-title">فات المعاد (Fat El Maad)</div>
-                <div class="card-role">ROLE: ASSISTANT DIRECTOR</div>
-                <p class="card-desc">Short film directorial team & assistant direction execution.</p>
-            </div>
-            <a href="https://youtu.be/nthwse81QMs" target="_blank" class="btn">Watch Film [YouTube]</a>
-        </div>
 
-        <!-- PROJECT 2: AMEER MASHHOUR x POPARABIA -->
+        <!-- 1. TAYER - MAHMOUL -->
         <div class="card">
-            <div>
-                <div class="card-category">02 / MUSIC VIDEO SERIES</div>
-                <div class="card-title">Ameer Mashhour x PopArabia</div>
-                <div class="card-role">ROLE: VIDEO EDITING & DIRECTION</div>
-                <p class="card-desc">Saudi music video collaboration series under PopArabia.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/fKRfIIaFnps" allowfullscreen></iframe>
             </div>
-            <div class="link-group">
-                <a href="https://www.youtube.com/watch?v=fs7eof86VUU" target="_blank" class="btn">1. Jeddah City</a>
-                <a href="https://youtu.be/GyuiavuJaTM" target="_blank" class="btn btn-outline">2. Ya Wad Gom</a>
-                <a href="https://youtu.be/nthwse81QMs" target="_blank" class="btn btn-outline">3. Ya Welcome</a>
-            </div>
-        </div>
-
-        <!-- PROJECT 3: ODII PROJECTS -->
-        <div class="card">
-            <div>
-                <div class="card-category">03 / MUSIC VIDEOS (SAUDI)</div>
-                <div class="card-title">ODii Music Videos</div>
-                <div class="card-role">ROLE: PHOTOGRAPHY & 1ST ART DIRECTOR</div>
-                <p class="card-desc">Visual concept execution, set art direction, and cinematography.</p>
-            </div>
-            <div class="link-group">
-                <a href="https://youtu.be/kNC-IFA1gqE" target="_blank" class="btn">ODii - Apachii</a>
-                <a href="https://youtu.be/zG76tYbTLLc" target="_blank" class="btn btn-outline">ODii - Ethnaiin</a>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">MUSIC VIDEO</div>
+                    <div class="card-title">Tayer - MAHMOUL (محمول)</div>
+                    <div class="card-roles">
+                        <span class="role-tag">Director</span>
+                        <span class="role-tag">Art Director</span>
+                        <span class="role-tag">3D</span>
+                        <span class="role-tag">Video Editor</span>
+                    </div>
+                    <div class="card-credits">
+                        DOP: Mohamed Fouad<br>
+                        Stylist: Esaf Mahmoud<br>
+                        Co-prod: fear2fuckup & testing studios
+                    </div>
+                </div>
+                <a href="https://youtu.be/fKRfIIaFnps" target="_blank" class="btn">Watch on YouTube</a>
             </div>
         </div>
 
-        <!-- PROJECT 4: 3D & VFX ARCHIVES -->
+        <!-- 2. SHORT FILM - FAT EL MAAD -->
         <div class="card">
-            <div>
-                <div class="card-category">04 / DIGITAL ARCHIVE</div>
-                <div class="card-title">3D, VFX & Edit Archives</div>
-                <div class="card-role">ROLE: 3D ARTIST & EDITOR</div>
-                <p class="card-desc">Personal collection of 3D animations, Blender renders, and motion edits.</p>
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/1202099833" allowfullscreen></iframe>
             </div>
-            <a href="https://vimeo.com/user257320336" target="_blank" class="btn">Explore Vimeo Channel</a>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">SHORT FILM</div>
+                    <div class="card-title">فات المعاد (Fat El Maad)</div>
+                    <div class="card-roles">
+                        <span class="role-tag">Assistant Director</span>
+                    </div>
+                </div>
+                <a href="https://vimeo.com/1202099833" target="_blank" class="btn">Watch on Vimeo</a>
+            </div>
+        </div>
+
+        <!-- 3. ODII - APACHII -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/kNC-IFA1gqE" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">MUSIC VIDEO (SAUDI)</div>
+                    <div class="card-title">ODii - Apachii (أباتشي)</div>
+                    <div class="card-roles">
+                        <span class="role-tag">1st Art Director</span>
+                        <span class="role-tag">Photography</span>
+                    </div>
+                </div>
+                <a href="https://youtu.be/kNC-IFA1gqE" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- 4. ODII - ETHNAIIN -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/zG76tYbTLLc" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">MUSIC VIDEO (SAUDI)</div>
+                    <div class="card-title">ODii - Ethnaiin (إثنين)</div>
+                    <div class="card-roles">
+                        <span class="role-tag">1st Art Director</span>
+                        <span class="role-tag">Photography</span>
+                    </div>
+                </div>
+                <a href="https://youtu.be/zG76tYbTLLc" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- 5. AMEER MASHHOUR - JEDDAH CITY -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/fs7eof86VUU" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">POPARABIA // MUSIC VIDEO</div>
+                    <div class="card-title">Ameer Mashhour - Jeddah City</div>
+                    <div class="card-roles">
+                        <span class="role-tag">Video Editor</span>
+                        <span class="role-tag">Post Production</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=fs7eof86VUU" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- 6. AMEER MASHHOUR - YA WAD GOM -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/GyuiavuJaTM" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">POPARABIA // MUSIC VIDEO</div>
+                    <div class="card-title">Ameer Mashhour - Ya Wad Gom</div>
+                    <div class="card-roles">
+                        <span class="role-tag">Video Editor</span>
+                        <span class="role-tag">Post Production</span>
+                    </div>
+                </div>
+                <a href="https://youtu.be/GyuiavuJaTM" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- 7. AMEER MASHHOUR - YA WELCOME -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/nthwse81QMs" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">POPARABIA // MUSIC VIDEO</div>
+                    <div class="card-title">Ameer Mashhour - Ya Welcome</div>
+                    <div class="card-roles">
+                        <span class="role-tag">Video Editor</span>
+                        <span class="role-tag">Post Production</span>
+                    </div>
+                </div>
+                <a href="https://youtu.be/nthwse81QMs" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
         </div>
 
     </div>
@@ -401,7 +472,6 @@
     <div class="section-header">// DIRECT CONTACT & INQUIRIES</div>
     <div class="contact-container">
         
-        <!-- FormSubmit Contact Form -->
         <form action="https://formsubmit.co/loaywrld420@gmail.com" method="POST">
             <input type="text" name="name" placeholder="YOUR NAME / BRAND" required>
             <input type="email" name="email" placeholder="YOUR EMAIL ADDRESS" required>
@@ -416,7 +486,7 @@
             </a>
             <a href="mailto:loaywrld420@gmail.com" class="social-link">
                 <span>DIRECT EMAIL</span>
-                <span>[EMAIL]</span>
+                <span>[loaywrld420@gmail.com]</span>
             </a>
             <a href="https://vimeo.com/user257320336" target="_blank" class="social-link">
                 <span>VIMEO CHANNEL</span>
