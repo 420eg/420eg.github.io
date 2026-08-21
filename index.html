@@ -176,6 +176,11 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
+        /* Full Width Card for Breakdown Sections */
+        .card.full-width {
+            grid-column: 1 / -1;
+        }
+
         .card-content {
             padding: 20px;
             display: flex;
@@ -219,6 +224,26 @@
             color: #888;
             margin-bottom: 15px;
             line-height: 1.4;
+        }
+
+        /* VFX Breakdown Grid Inner Layout */
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            background: #050505;
+            border-top: 1px solid var(--border);
+        }
+
+        .breakdown-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .breakdown-item .video-container {
+            border: 1px solid var(--border);
         }
 
         .btn {
@@ -359,7 +384,60 @@
             </div>
         </div>
 
-        <!-- 2. SHORT FILM - FAT EL MAAD -->
+        <!-- 2. PUBG MOBILE X TEMPLE SKATE SHOP -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/SvdXt8kx3T8" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <div>
+                    <div class="card-category">COMMERCIAL // COLLAB</div>
+                    <div class="card-title">PUBG MOBILE x TEMPLE SKATE SHOP</div>
+                    <div class="card-roles">
+                        <span class="role-tag">Video Editor</span>
+                        <span class="role-tag">VFX Artist</span>
+                    </div>
+                </div>
+                <a href="https://youtu.be/SvdXt8kx3T8" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- 3. TAYER - MAHMOUL (VFX BREAKDOWN SERIES) -->
+        <div class="card full-width">
+            <div class="card-content" style="padding-bottom: 10px;">
+                <div>
+                    <div class="card-category">VFX BREAKDOWN // PROCESS</div>
+                    <div class="card-title">TAYER - MAHMOUL (VFX BREAKDOWN SERIES)</div>
+                    <div class="card-roles">
+                        <span class="role-tag">3D & VFX Breakdown</span>
+                        <span class="role-tag">Visual Effects</span>
+                        <span class="role-tag">Post-Production</span>
+                    </div>
+                </div>
+            </div>
+            <div class="breakdown-grid">
+                <div class="breakdown-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/JCaVO5mixIE" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtu.be/JCaVO5mixIE" target="_blank" class="btn">VFX PART 01 ↗</a>
+                </div>
+                <div class="breakdown-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/H4bZE8msc2k" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtu.be/H4bZE8msc2k" target="_blank" class="btn">VFX PART 02 ↗</a>
+                </div>
+                <div class="breakdown-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/MVf_RpWIgdE" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtu.be/MVf_RpWIgdE" target="_blank" class="btn">VFX PART 03 ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. SHORT FILM - FAT EL MAAD -->
         <div class="card">
             <div class="video-container">
                 <iframe src="https://player.vimeo.com/video/1202099833" allowfullscreen></iframe>
@@ -376,7 +454,7 @@
             </div>
         </div>
 
-        <!-- 3. ODII - APACHII -->
+        <!-- 5. ODII - APACHII -->
         <div class="card">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/kNC-IFA1gqE" allowfullscreen></iframe>
@@ -394,7 +472,7 @@
             </div>
         </div>
 
-        <!-- 4. ODII - ETHNAIIN -->
+        <!-- 6. ODII - ETHNAIIN -->
         <div class="card">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/zG76tYbTLLc" allowfullscreen></iframe>
@@ -412,7 +490,7 @@
             </div>
         </div>
 
-        <!-- 5. AMEER MASHHOUR - JEDDAH CITY -->
+        <!-- 7. AMEER MASHHOUR - JEDDAH CITY -->
         <div class="card">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/fs7eof86VUU" allowfullscreen></iframe>
@@ -429,7 +507,7 @@
             </div>
         </div>
 
-        <!-- 6. AMEER MASHHOUR - YA WAD GOM -->
+        <!-- 8. AMEER MASHHOUR - YA WAD GOM -->
         <div class="card">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/GyuiavuJaTM" allowfullscreen></iframe>
@@ -446,7 +524,7 @@
             </div>
         </div>
 
-        <!-- 7. AMEER MASHHOUR - YA WELCOME -->
+        <!-- 9. AMEER MASHHOUR - YA WELCOME -->
         <div class="card">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/nthwse81QMs" allowfullscreen></iframe>
