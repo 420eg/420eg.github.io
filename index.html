@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOAY MAHMOUD // DIRECTORIAL & POST PORTFOLIO</title>
+    <title>LOAY MAHMOUD // DIRECTORIAL, POST & PHOTOGRAPHY PORTFOLIO</title>
     <style>
         :root {
             --bg: #050505;
@@ -247,6 +247,41 @@
             border: 1px solid var(--border);
         }
 
+        /* Photography Gallery Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .photo-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(110%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .photo-card:hover img {
+            filter: grayscale(0%) contrast(100%);
+            transform: scale(1.04);
+        }
+
+        .photo-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
         .btn {
             display: block;
             padding: 10px 16px;
@@ -334,7 +369,7 @@
     <header>
         <div class="brand">
             <h1>LOAY MAHMOUD<span>.</span></h1>
-            <p class="tag">Filmmaker // Post-Production & Visual Effects</p>
+            <p class="tag">Filmmaker // Post-Production // Photography</p>
         </div>
         <div class="tag">
             [ CAIRO, EG // PORTFOLIO ]
@@ -344,7 +379,7 @@
     <section class="hero">
         <h2 class="hero-title">VISUAL CHAOS.<br><mark>CINEMATIC</mark> PRECISION.</h2>
         <p class="hero-bio">
-            Filmmaker, Director, Video Editor, and VFX Artist. Specializing in high-energy music videos, narrative films, and 3D motion aesthetics.
+            Filmmaker, Director, Video Editor, 3D Artist, and Photographer. Specializing in high-energy music videos, narrative films, urban aesthetics, and visual archiving.
         </p>
 
         <div class="skills-badges">
@@ -353,10 +388,11 @@
             <span class="badge">1st Art Director</span>
             <span class="badge">3D & VFX</span>
             <span class="badge">Video Editing</span>
+            <span class="badge">Photography</span>
         </div>
     </section>
 
-    <!-- WORKS GRID WITH DIRECT EMBEDDED THUMBNAILS & PLAYERS -->
+    <!-- SELECTED WORKS GRID -->
     <div class="section-header">// SELECTED WORKS</div>
     <div class="grid">
 
@@ -578,6 +614,47 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- PHOTOGRAPHY GALLERY SECTION -->
+    <div class="section-header">// PHOTOGRAPHY</div>
+    <div class="photo-grid">
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_1feb44398b0d4a98b461ce28f6636c14~mv2.webp" alt="Photography Shot 1">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_2b164a6923094ef1b87d026091a56ffc~mv2.jpg" alt="Photography Shot 2">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_4c7c3a336a7940ef9d8fe8c56b7c4ff5~mv2.webp" alt="Photography Shot 3">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_7a0a309389034ee8aa1eff53d3c0bf54~mv2.jpg" alt="Photography Shot 4">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_7cf52eac7fe54cd3bed978196d642c20~mv2.jpg" alt="Photography Shot 5">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_38201a39690b44170c61b71c2087f6b~mv2.jpg" alt="Photography Shot 6">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_d3add61ddd0d4bb1b22920ad21f96eaf~mv2.webp" alt="Photography Shot 7">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_d04d7013718e4327b5d29bd15bbff3a1~mv2.webp" alt="Photography Shot 8">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_e947ee795f2445218d02972d35e983fb~mv2.webp" alt="Photography Shot 9">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_fb2db11568d14f509dacd0a814458bb~mv2.webp" alt="Photography Shot 10">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_fd09065c5fdf4377990192746259ce06~mv2.jpg" alt="Photography Shot 11">
+        </div>
+        <div class="photo-card">
+            <img src="Home_Enfado City_files/697b0d_32d4234e0dc34d139022f4c7a501bb11~mv2.webp" alt="Photography Shot 12">
+        </div>
     </div>
 
     <!-- CONTACT SECTION -->
