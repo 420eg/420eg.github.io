@@ -3,145 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOAY MAHMOUD // DIRECTORIAL, POST & PHOTOGRAPHY PORTFOLIO</title>
+    <title>LOAY MAHMOUD // PORTFOLIO</title>
     <style>
-        :root {
-            --bg: #050505;
-            --surface: #0d0d0d;
-            --border: #1f1f1f;
-            --text: #ececec;
-            --muted: #666666;
-            --accent: #ff0033; /* Opium Red Accent */
-            --accent-glow: rgba(255, 0, 51, 0.2);
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', Courier, monospace;
         }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.4;
-            padding: 20px;
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Scanline Overlay Effect */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
-            background-size: 100% 4px;
-            z-index: 1000;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
         header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 25px;
             margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
-        .brand h1 {
+        h1 {
             font-size: 2.2rem;
-            letter-spacing: -1px;
-            text-transform: uppercase;
+            letter-spacing: 2px;
             font-weight: 900;
+            margin-bottom: 12px;
         }
 
-        .brand h1 span {
-            color: var(--accent);
+        h1 .red-text {
+            color: #ff0033;
         }
 
-        .tag {
-            font-size: 0.8rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        h1 .white-text {
+            color: #ffffff;
         }
 
-        /* Hero / Bio Section */
-        .hero {
-            margin-bottom: 40px;
-        }
-
-        .hero-title {
-            font-size: 2.8rem;
-            line-height: 1.1;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .hero-title mark {
-            background: none;
-            color: var(--accent);
-        }
-
-        .hero-bio {
-            color: #999;
+        p.bio {
+            color: #999999;
             max-width: 750px;
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            line-height: 1.5;
+            margin-bottom: 25px;
         }
 
-        .skills-badges {
+        .filter-tags {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            gap: 10px;
+            margin-bottom: 45px;
         }
 
-        .badge {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 6px 12px;
+        .filter-btn {
+            background-color: transparent;
+            border: 1px solid #ff0033;
+            color: #ff0033;
+            padding: 6px 14px;
             font-size: 0.75rem;
-            color: var(--accent);
-            text-transform: uppercase;
+            font-family: inherit;
+            font-weight: bold;
             letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        /* Section Headers */
-        .section-header {
+        .section-title {
+            color: #ff0033;
             font-size: 0.9rem;
-            color: var(--accent);
-            text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        @media (max-width: 550px) {
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: #0d0d0d;
+            border: 1px solid #1f1f1f;
+            padding: 16px;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-direction: column;
         }
 
-        .section-header::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        /* Video Container Aspect Ratio 16:9 */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            background: #000;
-            border-bottom: 1px solid var(--border);
+            background-color: #000;
+            margin-bottom: 18px;
+            border: 1px solid #222;
         }
 
         .video-container iframe {
@@ -153,541 +114,163 @@
             border: 0;
         }
 
-        /* Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        /* Full Width Card for Breakdown Sections */
-        .card.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .card-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            gap: 15px;
-        }
-
         .card-category {
-            font-size: 0.7rem;
-            color: var(--accent);
+            color: #ff0033;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 8px;
+            font-weight: bold;
         }
 
         .card-title {
+            color: #ffffff;
             font-size: 1.1rem;
-            margin-bottom: 8px;
-            text-transform: uppercase;
             font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
-        .card-roles {
+        .role-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .role-tag {
-            font-size: 0.7rem;
-            color: #fff;
-            background: #181818;
+            background-color: #141414;
+            color: #ff0033;
+            border: 1px solid #333333;
             padding: 3px 8px;
-            border-left: 2px solid var(--accent);
-            text-transform: uppercase;
-        }
-
-        .card-credits {
-            font-size: 0.75rem;
-            color: #888;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        /* VFX Breakdown Grid Inner Layout */
-        .breakdown-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            background: #050505;
-            border-top: 1px solid var(--border);
-        }
-
-        .breakdown-item {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .breakdown-item .video-container {
-            border: 1px solid var(--border);
-        }
-
-        /* Photography Gallery Grid */
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 15px;
-            margin-bottom: 60px;
-        }
-
-        .photo-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            aspect-ratio: 4/5;
-            position: relative;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(20%) contrast(110%);
-            transition: transform 0.4s ease, filter 0.4s ease;
-        }
-
-        .photo-card:hover img {
-            filter: grayscale(0%) contrast(100%);
-            transform: scale(1.04);
-        }
-
-        .photo-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        .btn {
-            display: block;
-            padding: 10px 16px;
-            background: var(--text);
-            color: var(--bg);
-            text-decoration: none;
+            font-size: 0.65rem;
             font-weight: bold;
-            font-size: 0.75rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.2s;
-            margin-top: auto;
         }
 
-        .btn:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            padding-top: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        input, textarea {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 14px;
-            font-size: 0.85rem;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .social-box {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .social-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: border-color 0.2s;
-        }
-
-        .social-link:hover {
-            border-color: var(--text);
-        }
-
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            text-align: center;
+        .credits {
+            color: #777777;
             font-size: 0.75rem;
-            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            font-family: monospace;
+            min-height: 50px;
+        }
+
+        .btn-watch {
+            display: block;
+            width: 100%;
+            background-color: #e6e6e6;
+            color: #000000;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-top: auto;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-watch:hover {
+            background-color: #ffffff;
+            color: #ff0033;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand">
-            <h1>LOAY MAHMOUD<span>.</span></h1>
-            <p class="tag">Filmmaker // Post-Production // Photography</p>
-        </div>
-        <div class="tag">
-            [ CAIRO, EG // PORTFOLIO ]
+        <h1><span class="red-text">CINEMATIC</span> <span class="white-text">PRECISION.</span></h1>
+        <p class="bio">
+            Filmmaker, Director, Video Editor, and VFX Artist. Specializing in high-energy music videos, narrative films, and 3D motion aesthetics.
+        </p>
+
+        <div class="filter-tags">
+            <button class="filter-btn">DIRECTOR</button>
+            <button class="filter-btn">ASSISTANT DIRECTOR</button>
+            <button class="filter-btn">1ST ART DIRECTOR</button>
+            <button class="filter-btn">3D & VFX</button>
+            <button class="filter-btn">VIDEO EDITING</button>
         </div>
     </header>
 
-    <section class="hero">
-        <h2 class="hero-title">VISUAL CHAOS.<br><mark>CINEMATIC</mark> PRECISION.</h2>
-        <p class="hero-bio">
-            Filmmaker, Director, Video Editor, 3D Artist, and Photographer. Specializing in high-energy music videos, narrative films, urban aesthetics, and visual archiving.
-        </p>
+    <main>
+        <div class="section-title">// SELECTED WORKS</div>
 
-        <div class="skills-badges">
-            <span class="badge">Director</span>
-            <span class="badge">Assistant Director</span>
-            <span class="badge">1st Art Director</span>
-            <span class="badge">3D & VFX</span>
-            <span class="badge">Video Editing</span>
-            <span class="badge">Photography</span>
-        </div>
-    </section>
-
-    <!-- SELECTED WORKS GRID -->
-    <div class="section-header">// SELECTED WORKS</div>
-    <div class="grid">
-
-        <!-- 1. TAYER - MAHMOUL -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/fKRfIIaFnps" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">MUSIC VIDEO</div>
-                    <div class="card-title">Tayer - MAHMOUL (محمول)</div>
-                    <div class="card-roles">
-                        <span class="role-tag">Director</span>
-                        <span class="role-tag">Art Director</span>
-                        <span class="role-tag">3D</span>
-                        <span class="role-tag">Video Editor</span>
-                    </div>
-                    <div class="card-credits">
-                        DOP: Mohamed Fouad<br>
-                        Stylist: Esaf Mahmoud<br>
-                        Co-prod: fear2fuckup & testing studios
-                    </div>
+        <div class="works-grid">
+            <!-- 1. TAYER - MAHMOUL -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_TAYER_VIDEO_ID" title="TAYER - MAHMOUL" allowfullscreen></iframe>
                 </div>
-                <a href="https://youtu.be/fKRfIIaFnps" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 2. PUBG MOBILE X TEMPLE SKATE SHOP -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/SvdXt8kx3T8" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">COMMERCIAL // COLLAB</div>
-                    <div class="card-title">PUBG MOBILE x TEMPLE SKATE SHOP</div>
-                    <div class="card-roles">
-                        <span class="role-tag">Video Editor</span>
-                        <span class="role-tag">VFX Artist</span>
-                    </div>
+                <div class="card-category">MUSIC VIDEO</div>
+                <h2 class="card-title">TAYER - MAHMOUL (محمول)</h2>
+                <div class="role-tags">
+                    <span class="role-tag">DIRECTOR</span>
+                    <span class="role-tag">ART DIRECTOR</span>
+                    <span class="role-tag">3D</span>
+                    <span class="role-tag">VIDEO EDITOR</span>
                 </div>
-                <a href="https://youtu.be/SvdXt8kx3T8" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 3. NZAHA CLOTHING - 3D COMMERCIAL -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/2N2ppPw_Kao" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">3D ANIMATION // COMMERCIAL</div>
-                    <div class="card-title">NZAHA CLOTHING - 3D PROMO</div>
-                    <div class="card-roles">
-                        <span class="role-tag">3D Artist</span>
-                        <span class="role-tag">VFX</span>
-                    </div>
+                <div class="credits">
+                    DOP: Mohamed Fouad<br>
+                    Stylist: Esaf Mahmoud<br>
+                    Co-prod: fear2fuckup & testing studios
                 </div>
-                <a href="https://youtu.be/2N2ppPw_Kao" target="_blank" class="btn">Watch on YouTube</a>
+                <a href="https://youtu.be/YOUR_TAYER_VIDEO_ID" target="_blank" class="btn-watch">WATCH ON YOUTUBE</a>
             </div>
-        </div>
 
-        <!-- 4. 3D CONCEPT WORK -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/LVBM-wYR-58" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">3D MOTION // VISUALS</div>
-                    <div class="card-title">3D CONCEPT WORK</div>
-                    <div class="card-roles">
-                        <span class="role-tag">3D Artist</span>
-                        <span class="role-tag">Motion Design</span>
-                    </div>
+            <!-- 2. PUBG MOBILE -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_PUBG_VIDEO_ID" title="PUBG MOBILE X TEMPLE SKATE SHOP" allowfullscreen></iframe>
                 </div>
-                <a href="https://youtu.be/LVBM-wYR-58" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 5. TAYER - MAHMOUL (VFX BREAKDOWN SERIES) -->
-        <div class="card full-width">
-            <div class="card-content" style="padding-bottom: 10px;">
-                <div>
-                    <div class="card-category">VFX BREAKDOWN // PROCESS</div>
-                    <div class="card-title">TAYER - MAHMOUL (VFX BREAKDOWN SERIES)</div>
-                    <div class="card-roles">
-                        <span class="role-tag">3D & VFX Breakdown</span>
-                        <span class="role-tag">Visual Effects</span>
-                        <span class="role-tag">Post-Production</span>
-                    </div>
+                <div class="card-category">COMMERCIAL // COLLAB</div>
+                <h2 class="card-title">PUBG MOBILE X TEMPLE SKATE SHOP</h2>
+                <div class="role-tags">
+                    <span class="role-tag">VIDEO EDITOR</span>
+                    <span class="role-tag">VFX ARTIST</span>
                 </div>
+                <div class="credits"></div>
+                <a href="https://youtu.be/YOUR_PUBG_VIDEO_ID" target="_blank" class="btn-watch">WATCH ON YOUTUBE</a>
             </div>
-            <div class="breakdown-grid">
-                <div class="breakdown-item">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/JCaVO5mixIE" allowfullscreen></iframe>
-                    </div>
-                    <a href="https://youtu.be/JCaVO5mixIE" target="_blank" class="btn">VFX PART 01 ↗</a>
+
+            <!-- 3. NZAHA 3D -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/2N2ppPw_Kao" title="NZAHA - 3D CLOTHING BRAND" allowfullscreen></iframe>
                 </div>
-                <div class="breakdown-item">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/H4bZE8msc2k" allowfullscreen></iframe>
-                    </div>
-                    <a href="https://youtu.be/H4bZE8msc2k" target="_blank" class="btn">VFX PART 02 ↗</a>
+                <div class="card-category">COMMERCIAL // 3D</div>
+                <h2 class="card-title">NZAHA - 3D CLOTHING BRAND</h2>
+                <div class="role-tags">
+                    <span class="role-tag">3D ARTIST</span>
+                    <span class="role-tag">VFX ARTIST</span>
+                    <span class="role-tag">3D MOTION</span>
                 </div>
-                <div class="breakdown-item">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/MVf_RpWIgdE" allowfullscreen></iframe>
-                    </div>
-                    <a href="https://youtu.be/MVf_RpWIgdE" target="_blank" class="btn">VFX PART 03 ↗</a>
+                <div class="credits"></div>
+                <a href="https://youtu.be/2N2ppPw_Kao" target="_blank" class="btn-watch">WATCH ON YOUTUBE</a>
+            </div>
+
+            <!-- 4. 3D ANIMATION -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/LVBM-wYR-58" title="3D ANIMATION & VFX" allowfullscreen></iframe>
                 </div>
-            </div>
-        </div>
-
-        <!-- 6. SHORT FILM - FAT EL MAAD -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1202099833" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">SHORT FILM</div>
-                    <div class="card-title">فات المعاد (Fat El Maad)</div>
-                    <div class="card-roles">
-                        <span class="role-tag">Assistant Director</span>
-                    </div>
+                <div class="card-category">3D ANIMATION // VFX</div>
+                <h2 class="card-title">3D MOTION & VISUALS</h2>
+                <div class="role-tags">
+                    <span class="role-tag">3D ARTIST</span>
+                    <span class="role-tag">ANIMATOR</span>
+                    <span class="role-tag">3D & VFX</span>
                 </div>
-                <a href="https://vimeo.com/1202099833" target="_blank" class="btn">Watch on Vimeo</a>
+                <div class="credits"></div>
+                <a href="https://youtu.be/LVBM-wYR-58" target="_blank" class="btn-watch">WATCH ON YOUTUBE</a>
             </div>
         </div>
-
-        <!-- 7. ODII - APACHII -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/kNC-IFA1gqE" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">MUSIC VIDEO (SAUDI)</div>
-                    <div class="card-title">ODii - Apachii (أباتشي)</div>
-                    <div class="card-roles">
-                        <span class="role-tag">1st Art Director</span>
-                        <span class="role-tag">Photography</span>
-                    </div>
-                </div>
-                <a href="https://youtu.be/kNC-IFA1gqE" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 8. ODII - ETHNAIIN -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/zG76tYbTLLc" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">MUSIC VIDEO (SAUDI)</div>
-                    <div class="card-title">ODii - Ethnaiin (إثنين)</div>
-                    <div class="card-roles">
-                        <span class="role-tag">1st Art Director</span>
-                        <span class="role-tag">Photography</span>
-                    </div>
-                </div>
-                <a href="https://youtu.be/zG76tYbTLLc" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 9. AMEER MASHHOUR - JEDDAH CITY -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/fs7eof86VUU" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">POPARABIA // MUSIC VIDEO</div>
-                    <div class="card-title">Ameer Mashhour - Jeddah City</div>
-                    <div class="card-roles">
-                        <span class="role-tag">Assistant Producer</span>
-                    </div>
-                </div>
-                <a href="https://youtu.be/fs7eof86VUU" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 10. AMEER MASHHOUR - YA WAD GOM -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/GyuiavuJaTM" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">POPARABIA // MUSIC VIDEO</div>
-                    <div class="card-title">Ameer Mashhour - Ya Wad Gom</div>
-                    <div class="card-roles">
-                        <span class="role-tag">Assistant Producer</span>
-                    </div>
-                </div>
-                <a href="https://youtu.be/GyuiavuJaTM" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-        <!-- 11. AMEER MASHHOUR - YA WELCOME -->
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/nthwse81QMs" allowfullscreen></iframe>
-            </div>
-            <div class="card-content">
-                <div>
-                    <div class="card-category">POPARABIA // MUSIC VIDEO</div>
-                    <div class="card-title">Ameer Mashhour - Ya Welcome</div>
-                    <div class="card-roles">
-                        <span class="role-tag">Assistant Producer</span>
-                    </div>
-                </div>
-                <a href="https://youtu.be/nthwse81QMs" target="_blank" class="btn">Watch on YouTube</a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- PHOTOGRAPHY GALLERY SECTION -->
-    <div class="section-header">// PHOTOGRAPHY</div>
-    <div class="photo-grid">
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_1feb44398b0d4a98b461ce28f6636c14~mv2.webp" alt="Photography Shot 1">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_2b164a6923094ef1b87d026091a56ffc~mv2.jpg" alt="Photography Shot 2">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_4c7c3a336a7940ef9d8fe8c56b7c4ff5~mv2.webp" alt="Photography Shot 3">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_7a0a309389034ee8aa1eff53d3c0bf54~mv2.jpg" alt="Photography Shot 4">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_7cf52eac7fe54cd3bed978196d642c20~mv2.jpg" alt="Photography Shot 5">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_38201a39690b44170c61b71c2087f6b~mv2.jpg" alt="Photography Shot 6">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_d3add61ddd0d4bb1b22920ad21f96eaf~mv2.webp" alt="Photography Shot 7">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_d04d7013718e4327b5d29bd15bbff3a1~mv2.webp" alt="Photography Shot 8">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_e947ee795f2445218d02972d35e983fb~mv2.webp" alt="Photography Shot 9">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_fb2db11568d14f509dacd0a814458bb~mv2.webp" alt="Photography Shot 10">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_fd09065c5fdf4377990192746259ce06~mv2.jpg" alt="Photography Shot 11">
-        </div>
-        <div class="photo-card">
-            <img src="Home_Enfado City_files/697b0d_32d4234e0dc34d139022f4c7a501bb11~mv2.webp" alt="Photography Shot 12">
-        </div>
-    </div>
-
-    <!-- CONTACT SECTION -->
-    <div class="section-header">// DIRECT CONTACT & INQUIRIES</div>
-    <div class="contact-container">
-        
-        <form action="https://formsubmit.co/loaywrld420@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="YOUR NAME / BRAND" required>
-            <input type="email" name="email" placeholder="YOUR EMAIL ADDRESS" required>
-            <textarea name="message" rows="5" placeholder="PROJECT BRIEF / INQUIRY..." required></textarea>
-            <button type="submit" class="btn">SEND BRIEF</button>
-        </form>
-
-        <div class="social-box">
-            <a href="https://wa.me/201555296241" target="_blank" class="social-link">
-                <span>WHATSAPP DIRECT</span>
-                <span>[+20 155 529 6241]</span>
-            </a>
-            <a href="mailto:loaywrld420@gmail.com" class="social-link">
-                <span>DIRECT EMAIL</span>
-                <span>[loaywrld420@gmail.com]</span>
-            </a>
-            <a href="https://vimeo.com/user257320336" target="_blank" class="social-link">
-                <span>VIMEO CHANNEL</span>
-                <span>[VIMEO]</span>
-            </a>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>© LOAY MAHMOUD. ALL RIGHTS RESERVED.</p>
-    </footer>
+    </main>
 
 </body>
 </html>
